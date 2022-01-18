@@ -1,0 +1,570 @@
+<!-- https://docs.netlify.com/routing/redirects/redirect-options/ -->
+
+https://kqh.netlify.app/*  /:splat
+
+/* /404.html 404
+
+/tutorial/*  /key/:splat
+
+/xuekan/*  https://chunqiu.kqh.me/xuekan/:splat
+
+/net/qin/*  /qinyi/:splat
+
+/net/history/*  /nethistory/:splat
+
+/reading  /gallery/
+
+calligraphy  /gallery/calligraphy
+
+dubbing  /gallery/dubbing
+
+design  /gallery/design
+
+mynews  /gallery/mynews
+
+performing  /gallery/performing
+
+publication  /gallery/publication
+
+/blog/2017/12/11/lvxue.html  /key/01
+
+/blog/2018/03/07/qinlv.html  /key/02
+
+/blog/2017/12/01/yinlv.html  /key/03
+
+/blog/2018/03/10/qindiao.html  /key/04
+
+/blog/2018/02/27/youlan.html  /key/orchid
+
+/blog/2018/08/15/qpyy.html  /key/qieyun
+
+/key/calendar4  /key/calendar1
+
+/159  /key/calendar2
+
+/qinpu/00table/*  /qinpu/00/:splat
+
+/read/book-of-documents-:splat /read/shangshu/:splat
+
+/187  /read/shangshu/50
+
+/blog/2018/10/16/szgz.html /post/ancient-characters
+
+/blog/2018/09/24/uumu.html  /post/books
+
+/blog/2018/09/30/fuui.html  /database/master-exam
+
+/post/master-exam  /database/master-exam
+
+/post/books  /pin/books
+
+/blog/2018/02/09/houzuowu.html  /post/houzuowu
+
+/blog/2018/09/20/uevi.html  /post/songfeng
+
+/net/font-1  /recommendation/font
+
+/release  /changelog
+
+/paper  /publication
+
+/read/dingchengyun-lecture  /key/history-qin-1
+
+/188  /recommendation/history
+
+/blog/2018/11/13/ifhssf.html  /recommendation/chenhongsen
+
+/read/50-%E8%A5%BF%E6%B4%8B/56-%E4%BB%A5%E5%AD%B8%E8%A1%93%E7%82%BA%E6%A5%AD  /read/citizen/34982085
+
+/149  /post/layout
+
+/223  /post/recommendation
+
+/224  /post/statistics
+
+/226  /post/actions
+
+/post/289  /column1/16
+
+/post/292  /column1/5
+
+/post/293  /column1/4
+
+/post/294  /column1/6
+
+/post/295  /column1/7
+
+/post/296  /column1/8
+
+/post/297  /column1/9
+
+/post/324  /column1/18
+
+/post/309  /column1/17
+
+/post/306  /column1/3
+
+/post/305  /column1/2
+
+/post/304  /column1/1
+
+/post/303  /column1/15
+
+/post/302  /column1/14
+
+/post/301  /column1/13
+
+/post/300  /column1/12
+
+/post/299  /column1/11
+
+/post/298  /column1/10
+
+/post/guanpinghu  /database/guan-photo
+
+/post/qinphoto  /database/qin-photo
+
+/blog/2018/11/02/ykmk.html  /database/yingming
+
+/157  /database/master-rules
+
+/blog/2018/11/12/bduzyi.html  /database/baishouyi
+
+/net/history-chenmengjia  /net/history/chenmengjia
+
+/net/history-rt4  /net/history/rt4
+
+/net/history-huangqiyi  /net/history/huangqiyi
+
+/net/history-westernised-chinese  /net/history/rt1
+
+/net/history-1  /net/history/1
+
+/net/history-2  /net/history/2
+
+/net/history-3  /net/history/3
+
+/net/history-4  /net/history/4
+
+/net/history-5  /net/history/5
+
+/net/history-6  /net/history/6
+
+/net/history-7  /net/history/7
+
+/net/history-8  /net/history/8
+
+/net/history-9  /net/history/9
+
+/net/history-10  /net/history/10
+
+/net/history-11  /net/history/11
+
+/net/qin-tradition  /net/qin/tradition
+
+/net/qin-new  /net/qin/composition
+
+/net/wanghuade  /wanghuade
+
+/blog/2018/11/10/pu.html  /wanghuade
+
+/net/qin-1  /net/qin/1
+
+/net/qin-2  /net/qin/2
+
+/net/qin-3  /net/qin/3
+
+/net/qin-4  /net/qin/4
+
+/net/qin-5  /net/qin/5
+
+/net/qin-6  /net/qin/6
+
+/net/qin-7  /net/qin/7
+
+/net/qin-8  /net/qin/8
+
+/216  /read/citizen/220
+
+/blog/2018/06/11/zhongguo.html  /read/citizen/980
+
+/193  /read/citizen/951
+
+/read/mortal-questions  /read/citizen/690
+
+/read/theory-of-justice  /read/citizen/670
+
+/read/on-liberty  /read/citizen/560
+
+/read/was-ist-aufklärung  /read/citizen/530
+
+/read/fragment-on-government  /read/citizen/528
+
+/blog/2018/06/01/dianji.html  /read/citizen/430
+
+/read/einer-allgemeinen-geschichte-in-weltbürgerlicher-absicht  /read/citizen/330
+
+/218  /read/citizen/270
+
+/219  /read/citizen/260
+
+/read/ceremony-1  /read/ceremony/1
+
+/read/ceremony-2  /read/ceremony/2
+
+/read/ceremony-3  /read/ceremony/3
+
+/read/ceremony-4  /read/ceremony/4
+
+/read/book-of-rites-wangzhi   /read/ceremony/wangzhi
+
+/read/commentary-of-gongyang-book  /read/gongyang/101
+
+/read/commentary-of-gongyang-1  /read/gongyang/1
+
+/read/classic-of-filial-piety  /read/xiaojing/1
+
+/126  /read/chenbisheng
+
+/143  /read/zhengxue
+
+/192  /read/beijingdujing
+
+/120  /read/liaoping
+
+/121  /read/sanbainian
+
+/123  /read/zhouyutong
+
+/124  /read/jingxuetonglun
+
+/125  /read/zuzongzhifa
+
+/127  /read/qin/010
+
+/128  /read/qin/550
+
+/186  /read/qin/yushuishan
+
+/blog/2018/10/29/mgwfts.html  /read/mengwentong
+
+/blog/2018/06/12/chali.html  /read/west/charles-the-great
+
+/165  /read/west/120
+
+/read/misquoting-jesus  /read/west/misquoting-jesus
+
+/read/age-of-extermes  /read/west/age-of-extermes
+
+/139  /read/west/sweetness-and-power
+
+/read/scienza-nuova  /read/west/scienza-nuova
+
+/blog/2018/06/07/jiuzhidu.html  /read/west/22
+
+/blog/2017/10/30/daxt.html  /post/10
+
+/blog/2018/01/24/tiyj.html  /post/28
+
+/blog/2018/01/21/ksmn.html  /post/27
+
+/blog/2018/01/20/gcxs.html  /post/26
+
+/blog/2018/01/01/xbnm.html  /post/25
+
+/blog/2017/12/26/tdnj.html  /post/24
+
+/blog/2017/12/13/vzmo.html  /post/23
+
+/blog/2017/12/05/jianpan.html  /post/22
+
+/blog/2017/11/27/tdvs.html  /post/21
+
+/blog/2017/11/19/tangmei.html  /post/20
+
+/blog/2017/11/17/jils.html  /post/19
+
+/blog/2017/11/02/wenpin.html  /post/18
+
+/blog/2017/11/02/guoyu.html  /post/17
+
+/blog/2017/11/01/wjqb.html  /post/16
+
+/blog/2017/11/01/shanshui.html  /post/15
+
+/blog/2017/11/01/haoran.html  /post/14
+
+/blog/2017/10/30/dswu.html  /post/13
+
+/blog/2017/10/29/iuyz.html  /post/12
+
+/blog/2017/10/28/fuchou.html  /post/11
+
+/blog/2017/10/28/daxt.html  /post/10
+
+/blog/2017/10/27/tdbw.html  /post/9
+
+/blog/2017/10/17/jiejue.html  /post/8
+
+/blog/2017/10/16/sizhong.html  /post/7
+
+/blog/2017/10/14/laoshi.html  /post/6
+
+/blog/2017/10/10/jqff.html  /post/5
+
+/blog/2017/10/07/yilj2.html  /post/4
+
+/blog/2017/10/06/yilj.html  /post/3
+
+/blog/2017/10/05/hxlm.html  /post/2
+
+/blog/2017/10/04/shuoming.html  /post/1
+
+/blog/2018/02/14/fangqin.html  /post/30
+
+/blog/2018/08/11/soji2.html  /post/50
+
+/blog/2018/08/11/soji1.html  /post/49
+
+/blog/2018/08/11/gcujlquv.html  /post/48
+
+/blog/2018/08/11/fudm.html  /post/47
+
+/blog/2018/08/10/jpgz.html  /post/46
+
+/blog/2018/07/22/libuji.html  /post/45
+
+/blog/2018/07/05/zirj.html  /post/44
+
+/blog/2018/06/22/yousong.html  /post/43
+
+/blog/2018/06/12/zhuanggong.html  /post/42
+
+/blog/2018/06/12/xixia.html  /post/41
+
+/blog/2018/06/12/siheyuan.html  /post/40
+
+/blog/2018/06/11/xiaojing.html  /post/39
+
+/blog/2018/06/11/taoci.html  /post/38
+
+/blog/2018/06/11/shuibushi.html  /post/37
+
+/blog/2018/06/11/liyage.html  /post/35
+
+/blog/2018/06/11/lilun.html  /post/34
+
+/blog/2018/06/11/beiyang.html  /post/33
+
+/blog/2018/06/05/minghua.html  /post/32
+
+/blog/2018/04/29/wuyeti.html  /post/31
+
+/blog/2018/08/11/ufrfih.html  /post/51
+
+/blog/2018/10/15/iuvs1.html  /post/70
+
+/blog/2018/10/14/yzts.html  /post/68
+
+/blog/2018/10/14/uoxn.html  /post/67
+
+/blog/2018/10/14/lhqn.html  /post/66
+
+/blog/2018/10/14/bkvs.html  /post/65
+
+/blog/2018/10/13/iuvs.html  /post/64
+
+/blog/2018/10/10/igduhx.html  /post/63
+
+/blog/2018/10/08/wfvz.html  /post/62
+
+/blog/2018/11/06/zjuh.html  /donate
+
+/blog/2018/10/08/ffqi.html  /post/61
+
+/blog/2018/10/03/vznm.html  /post/60
+
+/blog/2018/09/21/vznm.html  /post/57
+
+/blog/2018/09/21/pdbj.html  /post/56
+
+/blog/2018/08/26/yjxi.html  /post/54
+
+/blog/2018/08/14/soji3.html  /post/53
+
+/blog/2018/08/11/vifaji.html  /post/52
+
+/146  /post/90
+
+/145  /post/89
+
+/144  /post/88
+
+/140  /post/87
+
+/blog/2018/11/16/vaji.html  /post/78
+
+/blog/2018/11/14/ytug.html  /post/77
+
+/blog/2018/11/02/dijqjp.html  /post/76
+
+/blog/2018/10/31/jr.html  /post/75
+
+/blog/2018/10/18/iuvs2.html  /post/73
+
+/147  /post/91
+
+/172  /post/110
+
+/173  /post/109
+
+/171  /post/108
+
+/170  /post/107
+
+/169  /post/106
+
+/168  /post/105
+
+/167  /post/104
+
+/blog/2018/06/11/qinwang.html  /post/103
+
+/164  /post/102
+
+/162  /post/101
+
+/160  /post/100
+
+/158  /post/99
+
+/156  /post/98
+
+/155  /post/97
+
+/154  /post/96
+
+/153  /post/95
+
+/151  /post/94
+
+/150 /post/93
+
+/148  /post/92
+
+/175  /post/111
+
+/225  /post/124
+
+/post/132jmbo  /post/81
+
+/post/134husa  /post/82
+
+/post/135dclm  /post/83
+
+/post/136yutdwj  /post/84
+
+/post/138uhxi  /post/86
+
+/post/254-30  /post/152
+
+/post/255-replace  /post/153
+
+/post/256-family  /post/154
+
+/post/257-wenzhou  /post/156
+
+/post/258-whyblogging  /post/157
+
+/221  /post/123
+
+/220  /post/122
+
+/212  /post/121
+
+/191  /post/120
+
+/190  /post/119
+
+/184  /post/118
+
+/183  /post/117
+
+/180  /post/116
+
+/179  /post/115
+
+/178 /post/114
+
+/177  /post/113
+
+/176  /post/112
+
+/post/0003  /post/169
+
+/post/313  /post/190
+
+/post/312  /post/189
+
+/post/311  /post/188
+
+/post/310  /post/187
+
+/post/308  /post/186
+
+/post/307  /post/185
+
+/post/291  /post/184
+
+/post/325  /post/201
+
+/post/315  /post/192
+
+/post/comment  /comment
+
+
+/blog/2018/05/19/zaoyin.html  https://thefaint.cc/blog/1
+
+/blog/2018/05/09/mixpre.html  https://thefaint.cc/blog/2 
+
+/blog/2017/12/23/shiyin.html  https://thefaint.cc/blog/3
+
+/189  https://thefaint.cc/blog/4
+
+/185  https://thefaint.cc/blog/5
+
+/post/recording-que  https://thefaint.cc/blog/6
+
+/blog/2018/05/19/shebei.html  https://thefaint.cc/gear
+
+/181  https://thefaint.cc/bookmark
+
+/182  https://thefaint.cc/monthly/1
+
+/recording/1  https://thefaint.cc/notes/1  
+
+/recording/2  https://thefaint.cc/notes/2  
+
+/recording/3  https://thefaint.cc/notes/3  
+
+/recording/4  https://thefaint.cc/notes/4  
+
+/recording/5  https://thefaint.cc/notes/5  
+
+/recording/6  https://thefaint.cc/notes/6  
+
+/recording/7  https://thefaint.cc/notes/7  
+
+/recording/8  https://thefaint.cc/notes/8  
+
+/recording/9  https://thefaint.cc/notes/9  
+
+/recording/10  https://thefaint.cc/notes/10  
+
+/recording/11  https://thefaint.cc/notes/11  
+
+/recording/12  https://thefaint.cc/notes/12  
+
+/recording/13  https://thefaint.cc/notes/13  
+
+/recording/14  https://thefaint.cc/notes/14  
