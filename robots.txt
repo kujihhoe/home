@@ -1,6 +1,7 @@
 User-agent: *
 Sitemap: https://kqh.me/sitemap.xml
 
+Disallow: kqhhome.netlify.app/*
 Disallow: /pin/
 Disallow: /post/layout/
 Disallow: /newsletter/*
