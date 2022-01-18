@@ -1,0 +1,79 @@
+<header class="nav-tab-wrap">
+  <div class="nav-tab">
+    {{ if eq .Page.Type "post" }}
+    <div>
+      <h0 class="a1"><a href="/#post">網誌</a></h0>
+    </div>
+    <nav class="tab-wrap">
+      <span class='DocSearch-lvl0 tab a1 a3 active'><a href="/post/">網誌</a></span>
+      <button class='a1 a3'><a href='https://alive.bar/@kqh' target="_blank">微誌</a></button>
+    </nav>
+    {{ else if eq .Page.Type "read" "key" "database" "exam" }}
+    <div>
+      <h0 class="a1"><a href="/#wiki">知識</a></h0>
+    </div>
+    <nav class="tab-wrap">
+      <span class='DocSearch-lvl0 tab a1 a3 {{ if eq .Page.Type "read" }}active{{ end }}'><a
+          href="/read/">赫赫蠹書</a></span>
+      <span class='DocSearch-lvl0 tab a1 a3 {{ if eq .Page.Type "key" }}active{{ end }}'><a href="/key/">赫赫金鑰</a></span>
+      <span class='DocSearch-lvl0 tab a1 a3 {{ if eq .Page.Type "database" }}active{{ end }}'><a
+          href="/database/">資源資料</a></span>
+      <span class='DocSearch-lvl0 tab a1 a3 {{ if eq .Page.Type "exam" }}active{{ end }}'><a
+          href="/exam/">考試筆記</a></span>
+      <span class='tab a1' style="font-size: .9em;"><a href="/invitation" target="_blank">稿約</a></span>
+    </nav>
+    {{ else if eq .Page.Type "newsletter" "qinyi" "nethistory" "float" }}
+    <div>
+      <h0 class="a1"><a href="/#net">通訊</a></h0>
+    </div>
+    <nav class="tab-wrap">
+      <span class='tab a1 a3 {{ if eq .Page.Type "newsletter" }}active{{ end }}'><a href="/newsletter/">刷微博</a></span>
+      {{ if eq .Page.Type "newsletter" }}
+      <button class='a1 a3'><a href='https://papyrus.so/@kqh' target="_blank">訂閱</a></button>
+      {{ end }}
+      <span class='DocSearch-lvl0 tab a1 a3 {{ if eq .Page.Type "qinyi" }}active{{ end }}'><a
+          href="/qinyi/">琴易</a></span>
+      {{ if eq .Page.Type "qinyi" }}
+      <button class='a1 a3'><a href='https://kqhnewsletter.zhubai.love' target="_blank">訂閱</a></button>
+      {{ end }}
+      <span class='DocSearch-lvl0 tab a1 a3 {{ if eq .Page.Type "nethistory" }}active{{ end }}'><a
+          href="/nethistory/">史網</a></span>
+    </nav>
+    {{ else if eq .Page.Type "column1" }}
+    <div>
+      <h0 class="a1"><a href="/#column">專欄</a></h0>
+    </div>
+    <nav class="tab-wrap">
+      <span class='DocSearch-lvl0 tab a1 a3 {{ if eq .Page.Type "column1" }}active{{ end }}'><a
+          href="/column1/">雲遊博物</a></span>
+      <span class='tab a1' style="font-size: .9em;"><a href="/invitation" target="_blank">誠邀作者</a></span>
+    </nav>
+    {{ else if eq .Page.Type "gallery" }}
+    <div>
+      <h0 class="DocSearch-lvl0 a1"><a href="/#gallery">作品</a></h0>
+    </div>
+    <div class="tab-wrap">
+      <h1 class="DocSearch-lvl1 a1">{{ .Title }}</h1>
+    </div>
+    {{ else if eq .Page.Type "pin" }}
+    <div>
+      <h0 class="DocSearch-lvl0 a1">置頂</h0>
+    </div>
+    <div class="tab-wrap">
+      <h1 class="DocSearch-lvl1 a1">{{ .Title }}</h1>
+    </div>
+    {{ else if eq .Page.Type "plus" "zanfu" }}
+    <div>
+      <h0><img class="logo-plus" src="/logo-plus.png">文王在天</h0>
+    </div>
+    <nav class="tab-wrap">
+      <span class='tab a1 a3 {{ if eq .RelPermalink "/dingsi/" }}active{{ end }}'><a href="/dingsi/">丁巳</a></span>
+    </nav>
+    {{ end }}
+  </div>
+  {{ if eq .Page.Type "pin" "gallery" }}
+  {{ if .Description }}
+  <p>{{ .Description | safeHTML | markdownify }}</p>
+  {{ end }}
+  {{ end }}
+</header>

@@ -1,0 +1,23 @@
+<div class="u-wrap">
+  <div class="discover-wrap">
+    <div class="discover column6 a1">
+      {{ range site.Data.links.wechatfriends }}
+      <div>
+        <div class="grid-bg bggray">
+          <div class="post-card links-icon" style="background-image: url({{ .img }})"></div>
+          <div>
+            {{if .href }}
+            <a href="{{ .href }}" target="_blank">
+              <div class="discover-item">{{- .title | safeHTML | markdownify -}}</div>
+            </a>
+            {{ else }}
+            <div class="discover-item">{{- .title | safeHTML | markdownify -}}</div>
+            {{ end }}
+            <div class="des-base des-des">{{ .description | safeHTML | markdownify }}</div>
+          </div>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</div>

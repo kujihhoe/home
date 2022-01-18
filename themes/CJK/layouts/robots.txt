@@ -1,0 +1,24 @@
+User-agent: *
+Sitemap: {{ "sitemap.xml" | absURL }}
+
+Disallow: /pin/
+Disallow: /post/layout/
+Disallow: /newsletter/*
+Disallow: /plus/*
+Disallow: /member/*
+Disallow: /dingsi/*
+Disallow: /float/*
+Disallow: /mlog/*
+Disallow: /gallery/*
+Disallow: /location/*
+Disallow: /category/*
+Disallow: /series/*
+Disallow: /tag/*
+Disallow: /note/*
+Disallow: /author/*
+Disallow: /authormlog/*
+Disallow: /book/*
+Disallow: /tutokind/*
+Disallow: /netkind/*
+Disallow: /examkind/*
+Disallow: /datakind/*

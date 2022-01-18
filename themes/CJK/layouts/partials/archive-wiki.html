@@ -1,0 +1,25 @@
+<div class="u-wrap">
+  {{ partial "nav-wiki.html" . }}
+</div>
+<main>
+  <div class="u-wrap">
+    <div class="discover-wrap">
+      {{ if eq .Page.Type "key" }}
+      {{ range site.Taxonomies.tutokind.ByCount }}
+      {{ partial "archive-wiki-sub.html" . }}
+      {{ end }}
+      
+      {{ else if eq .Page.Type "exam" }}
+      {{ range site.Taxonomies.examkind.Alphabetical }}
+      {{ partial "archive-wiki-sub.html" . }}
+      {{ end }}
+
+      {{ else if eq .Page.Type "database" }}
+      {{ range site.Taxonomies.datakind.Alphabetical }}
+      {{ partial "archive-wiki-sub.html" . }}
+      {{ end }}
+
+      {{ end }}
+    </div>
+  </div>
+</main>

@@ -1,0 +1,10 @@
+<div class= "horizontal-wrap">
+  <article class= "horizontal">
+    {{ .Content }}
+  </article>
+  {{ if and .TableOfContents (gt (len .TableOfContents) 40 ) }}
+  <aside class="toc toc-horizontal bggray">
+    <li class="toc-item">{{ .TableOfContents }}</li>
+  </aside>
+  {{ end }}
+</div>

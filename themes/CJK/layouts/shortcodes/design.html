@@ -1,0 +1,16 @@
+<div class="u-wrap">
+  <div class="gallery">
+    {{ range site.Data.gallery.design }}
+    <div class="gallery-card">
+      <div class="grid-bg bggray">
+        <time class="des-base des-des a1">{{ .date }}</time>
+        <div class="discover-item">{{ .title |safeHTML }}</div>
+        {{ $width := .width }}
+        {{ range .img }}
+        <img src="{{ . }}" width={{ $width }}>
+        {{ end }}
+      </div>
+    </div>
+    {{ end }}
+  </div>
+</div>
