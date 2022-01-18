@@ -1,6 +1,7 @@
 User-agent: *
 Sitemap: {{ "sitemap.xml" | absURL }}
 
+Disallow: kqhhome.netlify.app/*
 Disallow: /pin/
 Disallow: /post/layout/
 Disallow: /newsletter/*
