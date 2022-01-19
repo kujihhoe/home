@@ -1,6 +1,6 @@
-baseURL = "https://kqh.me/"
+baseURL = "https://me.kqh.me/"
 languageCode = "zh-HK"
-title = "赫赫文王"
+title = "柯棋瀚主頁"
 enableRobotsTXT = true
 theme = "CJK"
 disablePathToLower = true

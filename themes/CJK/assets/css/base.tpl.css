@@ -1541,7 +1541,7 @@ h0 {
 
 .recommendation-card {
   min-width: 12em;
-  background-size: cover;
+  background-size: contain;
   border-radius: .6em;
   aspect-ratio: 16/10;
   padding: .3em;
