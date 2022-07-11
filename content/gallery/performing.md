@@ -2,7 +2,7 @@
 type: gallery
 layout: gallery
 author: ["柯棋瀚"]
-title: "古琴演出講座紀錄"
+title: "古琴演出、講座"
 date: 2016-07-01
 lastmod: 2022-05-22
 slug: performing

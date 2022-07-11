@@ -2,7 +2,7 @@
 type: gallery
 layout: gallery
 author: ["柯棋瀚"]
-title: "文章發表 赫赫書局"
+title: "文章發表、赫赫書局"
 date: 2018-10-12
 lastmod: 2021-11-17
 slug: publication

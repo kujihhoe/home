@@ -2,7 +2,7 @@
 type: gallery
 layout: pin
 author: ["柯棋瀚"]
-title: "旁白 播音"
+title: "旁白、播音"
 date: 2017-04-28
 lastmod: 2019-04-29
 slug: dubbing
