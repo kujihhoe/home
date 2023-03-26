@@ -1,0 +1,5 @@
+User-agent: *
+Sitemap: https://me.kqh.me/sitemap.xml
+
+Disallow: kqhhome.netlify.app/*
+Disallow: /
