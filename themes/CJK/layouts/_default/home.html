@@ -1,0 +1,80 @@
+{{ define "main" }}
+<main class="home a1 bgwhite">
+  <section>
+    <div class="u-wrap">
+      <div class="cover-wrap bgpink gradient2-1">
+        <div class="home-cover-2">
+          <div><img style="border-radius: 1.5em" src="https://pic1.imgdb.cn/item/634b525616f2c2beb179e04b.jpg"></div>
+          <div>
+            <h1>柯棋瀚</h1>
+            <p style="text-align: center;">中科院自然科學史研究所博士生</p>
+            <h2>找到我</h2>
+            <div class="noborder">
+              {{ partial "contact.html" . }}
+            </div>
+          </div>
+        </div>
+      </div>
+      <h2>網站</h2>
+      <div class="discover column4">
+        {{ range site.Data.site }}
+        <span>
+          <a href="{{ .link }}" target="_blank">
+            <div class="recommendation-card scale" style="background-image: url({{ .img }})">
+              <div>{{ .description }}</div>
+            </div>
+          </a>
+        </span>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+
+  <section id="gallery" class="bggray">
+    <div class="u-wrap">
+      <div class="scroll">
+        {{ range (where site.RegularPages.ByLastmod.Reverse "Type" "gallery") }}
+        <div class="grid-bg scroll-child gradient3">
+          <div class="post-card" style="background-image: url({{ .Params.img }})"></div>
+          <div>
+            <time class="des-base des-des">{{ .Lastmod.Format "2006-01-02" }}</time>
+            <div class="discover-item">
+              {{if .Params.link }}
+              <a href="{{ .Params.link }}" target="_blank">
+                {{ else }}
+                <a href="{{ .Permalink }}" target="_blank">
+                  {{ end }}
+                  {{- .Title | safeHTML | markdownify -}}
+                </a>
+            </div>
+            <div class="des-base des-des">{{ .Params.description | safeHTML | markdownify }}</div>
+          </div>
+        </div>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+
+  <section class="bg">
+    <article class="horizontal">
+      {{ partial "resume.html" . | safeHTML | markdownify }}
+    </article>
+  </section>
+  <section class="bg1">
+    <div class="u-wrap">
+      <h2>赫赫琴屋</h2>
+      （建設中未開放，遙遙無期，不用看）
+      <div class="qin-home-wrap">
+        <div class="qin-home-child">
+          <div class="qin-home-img"
+            style="background-image: url(https://pic.imgdb.cn/item/61c5d5282ab3f51d912ed4a7.jpg);">
+          </div>
+          <div class="qin-home-detail bggray">
+            <p>地址：天知道？</p>
+          </div>
+        </div>
+      </div>
+  </section>
+
+</main>
+{{ end }}

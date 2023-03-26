@@ -1,0 +1,29 @@
+
+{{ if .Params.img }}
+<div class="bgshallowblack" style="color: var(--bggray);margin-top: -2em;margin-bottom: -3em;">
+  <div class="u-wrap">
+    {{ partial "nav-article.html" . }}
+  </div>
+</div>
+<div class="bgshallowblack" style="max-height: 70vh;margin-bottom: 22vh;">
+  <div class="article-cover" style="background-image: url({{ .Params.img }})">
+    <div class="article-cover-title">
+      <h1>
+        {{- .Title | safeHTML | markdownify -}}
+      </h1>
+      <div class="des-taxo black">{{ .Params.Description | safeHTML | markdownify }}</div>
+    </div>
+  </div>
+</div>
+
+{{ else }}
+
+<div class="u-wrap">
+  {{ partial "nav-article.html" . }}
+  <div>
+    <h1>{{- .Title | safeHTML | markdownify -}}
+    </h1>
+    <div class="des-taxo">{{ .Params.Description | safeHTML | markdownify }}</div>
+  </div>
+</div>
+{{ end }}

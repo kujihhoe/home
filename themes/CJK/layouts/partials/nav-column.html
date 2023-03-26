@@ -1,0 +1,26 @@
+{{ $name := "" }}
+{{ if eq .RelPermalink "/column1/" }}
+{{ $name = "雲遊博物" }}
+{{ end }}
+
+{{- $length := len .Data.Pages }}
+{{ $count := 0 }}{{ range .Pages }}{{ $count = add $count .WordCount }}{{ end }}
+
+<header class="nav-tab-wrap">
+  <div class="nav-tab">
+    <div>
+      <h0 class="a1"><a href="/#column">專欄</a></h0>
+    </div>
+    <nav class="tab-wrap">
+      <span class='tab a1 a3 {{ if eq .RelPermalink "/column1/" }}active{{ end }}'><a href="/column1/">雲遊博物</a></span>
+      <span class='tab a1' style="font-size: .9em;"><a href="/invitation" target="_blank">誠邀作者</a></span>
+    </nav>
+  </div>
+  {{ with $des := index (site.Data.taxo ) $name }}<p>{{ $des.des | safeHTML | markdownify }}</p>{{ end }}
+  <p class="des-base a1" style="font-size: .9em;">
+    凡 {{ $length }} 篇　{{- $count }} 字　篇均 {{ div $count $length }} 字　{{- with .Data.Pages.GroupByDate "2006" -}}橫跨 {{
+    len . }} 年{{- end -}}
+    　<a class="rss3" href="{{- .Permalink -}}index.xml" target="_blank"><span class="rss1">{{ $name }}</span><span
+        class="rss2">RSS</span></a>
+  </p>
+</header>

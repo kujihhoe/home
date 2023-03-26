@@ -1,0 +1,13 @@
+<div class="u-wrap">
+  <div class="gallery">
+    {{ range site.Data.gallery.calligraphy }}
+    <div class="gallery-card">
+      <div class="grid-bg bggray">
+        <time class="des-base des-des a1">{{ .date }}</time>
+        <div class="discover-item">{{ .title |safeHTML }}</div>
+        <img src="{{ .img }}" width={{ .width }}>
+      </div>
+    </div>
+    {{ end }}
+  </div>
+</div>

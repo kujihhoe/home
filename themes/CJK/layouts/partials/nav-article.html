@@ -1,0 +1,9 @@
+<header>
+  <div class="a1" style="font-family: var(--sans)"><a href="/">柯棋瀚主頁</a></div>
+  <h1>{{ .Title }}</h1>
+  {{ if eq .Page.Type "pin" "gallery" }}
+  {{ if .Description }}
+  <p class="des-taxo">{{ .Description | safeHTML | markdownify }}</p>
+  {{ end }}
+  {{ end }}
+</header>

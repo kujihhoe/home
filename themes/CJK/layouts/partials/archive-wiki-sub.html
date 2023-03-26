@@ -1,0 +1,24 @@
+{{ $count4 := 0 }}{{ range .Pages }}{{ $count4 = add $count4 .WordCount }}{{ end }}
+{{ $length := len .Pages }}
+{{ if ne .Page.Title "律曆初階" }}
+<h2 style="margin-bottom:0;" id="{{- .Page.Title | safeHTML -}}">{{ .Page.Title | safeHTML }}</h2>
+{{ if $length }}<div class="des-base">凡 {{ $length }} 篇　{{- $count4 }} 字　篇均 {{ div $count4 $length }} 字</div>{{ end }}
+{{ end }}
+<div class='discover a1 {{ if eq .Page.Title "律曆初階" }}column3{{ end }}'>
+  {{ range sort .Pages "File.Path" }}
+  {{ if .Params.img }}
+  <div class="discover-grid">
+    <div class="post-card" style="background-image: url({{ .Params.img }})"></div>
+    <div>
+      {{ partial "post-info-sub.html" . }}
+    </div>
+  </div>
+  {{ else }}
+  <div>
+    <span>
+      {{ partial "post-info-sub.html" . }}
+    </span>
+  </div>
+  {{ end }}
+  {{ end }}
+</div>

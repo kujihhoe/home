@@ -1,0 +1,250 @@
+<!-- 以下是隨機一篇訪問量最高的文章 -->
+{{ range first 1 (shuffle ( site.Menus.top)) }}
+<div><a href="{{ .Page.Permalink }}" target="_blank">
+        <div class="recommendation-card scale" style="background-image: url({{ .Page.Params.img }})"></div>
+    </a></div>
+{{ end }}
+
+<!-- 以下是博客部分最近更新的文章，排除了最近發布的五篇 -->
+<div class="home-latest-grid">
+    {{ $tmp := slice }}
+    {{ $blogLastmod := slice }}
+    {{ range (where site.RegularPages.ByLastmod.Reverse "Type" "post") }}
+    {{ if ne .Lastmod .Date }}
+    {{ $tmp = $tmp | append . }}
+    {{ $blogLastmod = $tmp | complement $latest }}
+    {{ end }}
+    {{ end }}
+    <div class="discover-wrap">
+        <div class="discover a1">
+            {{ range first 5 $blogLastmod }}
+            <div class="discover-grid">
+                {{ if .Params.img }}
+                <div class="post-card" style="background-image: url({{ .Params.img }})"></div>
+                {{ end }}
+                <div>
+                    <span class="des-base des-des"><time>{{ .Date.Format "2006-01-02" }}</time>{{ if ne .Date .Lastmod
+                        }} >
+                        {{ .Lastmod.Format "06-01-02" }}{{ end }}</span>　
+                    <div class="discover-item"><a href="{{ .Permalink }}" target="_blank">{{- .Title | safeHTML |
+                            markdownify -}}</a></div>
+                    <div class="des-base des-des des-tag a1">
+                        {{- with .Params.author -}}
+                        {{ range . }}
+                        {{- $name := . -}}
+                        {{- with site.GetPage "term" (printf "author/%s" $name) | default (site.GetPage "term"
+                        (printf
+                        "author/%s" ($name | urlize))) -}}
+                        <a href="/author/{{ $name }}">@{{- $name -}}</a>
+                        {{- end -}}
+                        {{- end -}}
+                        {{- end -}}
+                        {{- with .Params.category -}}
+                        {{- range . -}}
+                        {{- $name := . -}}
+                        {{- with site.GetPage "term" (printf "category/%s" $name) | default (site.GetPage "term"
+                        (printf
+                        "category/%s" ($name | urlize))) -}}
+                        　<a href="/category/{{ $name }}" target="_blank">[{{- $name -}}]</a>
+                        {{- end -}}
+                        {{- end -}}
+                        {{- end -}}
+                        {{- with .Params.series -}}
+                        {{- range . -}}
+                        {{- $name := . -}}
+                        {{- with site.GetPage "term" (printf "series/%s" $name) | default (site.GetPage "term"
+                        (printf
+                        "series/%s" ($name | urlize))) -}}
+                        　<a href="/series/{{ $name }}" target="_blank">{{- $name -}}｜</a>
+                        {{ end -}}
+                        {{ end }}
+                        {{- end }}
+                    </div>
+                </div>
+            </div>
+            {{ end }}
+        </div>
+    </div>
+</div>
+
+<!-- 以下是分類，一篇最新一篇隨機 -->
+<h2>分類 Categories</h2>
+<!-- <div class="des-base">隨機 8 箇分類（凡 11 箇）</div> -->
+<div class="discover-wrap">
+    <div class="discover a1">
+        {{ $auth := slice }}
+        {{ $1auth := slice }}
+        {{ range site.Taxonomies.author.ByCount }}
+        {{ if eq .Page.Title "柯棋瀚" }}
+        {{ $1auth = $1auth | append . }}
+        {{ end }}
+        {{ end }}
+        {{ range $1auth | shuffle }}
+        {{ range .Pages | shuffle }}
+        {{ $auth = $auth | append . }}
+        {{ end }}
+        {{ end }}
+        {{ $series := slice }}
+        {{ $1series := slice }}
+        {{ $3series := slice }}
+        {{ range site.Taxonomies.tag.主旋律 }}
+        {{ $1series = $1series | append .Page }}
+        {{ end }}
+        {{ with (where site.RegularPages "Type" "post") }}
+        {{ $3series = . | complement $1series }}
+        {{ end }}
+        {{ $series = intersect $3series $auth }}
+        {{ $allCate := where site.Taxonomies.category "Type" "post" }}
+        {{ with $allCate.ByCount | shuffle }}
+        {{ range first 12 . }}
+        {{ $first1 := slice }}
+        {{ range first 1 ( where .Pages "Type" "post" ) }}
+        {{ $first1 = $first1 | append . }}
+        {{ end }}
+        {{ $first1inSeries := intersect $series $first1 }}
+        {{ $thisCateinSeries := slice }}
+        {{ $end := slice }}
+        {{ $thisCate := slice }}
+        {{ range (where .Pages "Type" "post" ) | shuffle }}
+        {{ $thisCate = $thisCate | append . }}
+        {{ end }}
+        {{ $thisCateinSeries := intersect $thisCate $series }}
+        {{ $end := $thisCateinSeries | complement $first1inSeries }}
+        <span>
+            <h3><a href="{{ .Page.Permalink }}" target="_blank">{{ .Page.Title | safeHTML }}</a></h3>
+            <div class="des-base des-des" style="margin-top:.5em">最近 Latest /</div>
+            {{ range $first1 }}
+            <div class="discover-item categories"><a href="{{ .Permalink }}" target="_blank">{{- .Title | safeHTML |
+                    markdownify -}}</a></div>
+            {{ end }}
+            <div class="des-base des-des" style="margin:0">隨機 Random /</div>
+            {{ range first 1 $end | shuffle }}
+            <div class="discover-item categories"><a href="{{ .Permalink }}" target="_blank">{{- .Title | safeHTML |
+                    markdownify -}}</a></div>
+            {{ end }}
+        </span>
+        {{ end }}
+        {{ end }}
+    </div>
+</div>
+
+<!-- 以下是分類推薦 -->
+<div class="discover-wrap">
+    <div class="border2 a1">
+        <h3 style="text-align: left;padding: .5em 0 0 .5em;margin-bottom: -.5em;">隨機分類推薦</h3>
+        {{ $cate := slice }}
+        {{ range site.Taxonomies.category.ByCount }}
+        {{ if ne .Page.Title "目錄" "編務" }}
+        {{ $cate = $cate | append . }}
+        {{ end }}
+        {{ end }}
+        <div class="scroll">
+            {{ range $cate | shuffle }}
+            <div class="scroll-child scroll-child-3 gradient5">
+                <h3><a href="{{ .Page.Permalink }}" target="_blank">{{ .Page.Title | safeHTML }}</a></h3>
+                {{ with (where .Pages "Type" "in" site.Params.Sections3) | shuffle }}
+                {{ range first 1 . }}
+                <div class="discover-item categories">
+                    <a href="{{ .Permalink }}" target="_blank">{{- .Title | safeHTML | markdownify -}}</a>
+                </div>
+                {{ end }}
+                {{ end }}
+            </div>
+            {{ end }}
+        </div>
+    </div>
+</div>
+
+<!-- 封面圖 -->
+
+{{ $img := slice }}
+{{ range site.Data.image }}
+{{ range .image }}
+{{ $img = $img | append . }}
+{{ end }}
+{{ end }}
+{{ with $img | shuffle }}
+{{ range first 1 . }}
+
+<!-- 主頁微誌 -->
+<div>
+    <h2 id="mlog"><a href="/mlog" target="_blank">微誌</a></h2>
+    <div class="discover column3">
+      {{ range first 3 (where site.RegularPages.ByDate.Reverse "Type" "mlog") }}
+      {{ $name := "" }}
+      {{- with .Params.authormlog -}}
+      {{- range . -}}
+      {{- $name = . -}}
+      {{- with site.GetPage "term" (printf "authormlog/%s" $name) | default (site.GetPage "term" (printf
+      "authormlog/%s" ($name | urlize))) -}}
+      {{- end -}}
+      {{- end -}}
+      {{- end -}}
+      <div>
+        <div class="grid-bg mlog-card bggray" {{ if .Params.img }}
+          style='background-image:url("{{ .Params.img }}");aspect-ratio: 16/10;background-size: cover;' {{ end }}>
+          <div class="des-base des-des">
+            <time>{{ dateFormat "2006-01-02 15:04" .Date.UTC }}</time>
+            <span class="des-base des-des fr">@{{ $name }}</span>
+          </div>
+          {{ if .Title }}<h3>{{ .Title }}</h3>{{ end }}
+          <article>{{ .Content }}</article>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+
+  <!-- 主页琴流 -->
+  <h2><a href="/float" target="_blank">琴流</a></h2>
+  {{- with $des := index (site.Data.taxo ) "琴流" -}}
+  <div class="des-taxo">
+    {{- $des.des | safeHTML | markdownify -}}
+  </div>
+  {{ end }}
+  <div class="discover-wrap">
+    <div class="discover">
+      {{ range first 4 (where site.RegularPages.ByPublishDate.Reverse "Type" "float") }}
+      <div class="discover-grid">
+        <div class="post-card" style="background-image: url({{ .Params.img }})">
+        </div>
+        <div>
+          <time class="des-base des-des">{{ .Date.Format "2006-01-02" }}</time>
+          <div class="discover-item">
+            <a href="{{ .Params.link }}" target="_blank">{{ .Title }}</a>
+          </div>
+          <div class="des-base des-des" style="margin-top:-.7em">
+            {{ .Content }}
+          </div>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+
+
+  <!-- 作品 -->
+  <section class="bgwhite" id="gallery">
+    <div class="u-wrap">
+      <div class="scroll">
+        {{ range (where site.RegularPages.ByLastmod.Reverse "Type" "gallery") }}
+        <div class="grid-bg scroll-child gradient3">
+          <div class="post-card" style="background-image: url({{ .Params.img }})"></div>
+          <div>
+            <time class="des-base des-des">{{ .Lastmod.Format "2006-01-02" }}</time>
+            <div class="discover-item">
+              {{if .Params.link }}
+              <a href="{{ .Params.link }}" target="_blank">
+                {{ else }}
+                <a href="{{ .Permalink }}" target="_blank">
+                  {{ end }}
+                  {{- .Title | safeHTML | markdownify -}}
+                </a>
+            </div>
+            <div class="des-base des-des">{{ .Params.description | safeHTML | markdownify }}</div>
+          </div>
+        </div>
+        {{ end }}
+      </div>
+    </div>
+  </section>

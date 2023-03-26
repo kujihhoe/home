@@ -1,0 +1,37 @@
+{{ $count := 0 }}
+<div class="u-wrap">
+  <div class="discover-wrap">
+    <div class="discover a1">
+      {{ range site.Data.gallery.report }}
+      <div>
+        <div class="grid-bg bggray">
+          {{ if .img }}
+          <div class="post-card" style="background-image: url({{ .img }})">
+            <div class="archive-left">{{ $count = add $count 1 }}{{ $count }}</div>
+          </div>
+          {{ else }}
+          <div class="archive-left">{{ $count = add $count 1 }}{{ $count }}</div>
+          {{ end }}
+          <div>
+            <time class="des-base des-des a1">{{ .date }}</time><span class="des-base fr">{{ .site }}</span>
+            {{ if .link }}
+            <a href="{{ .link }}" target="_blank">
+              <div class="discover-item">{{- .title | safeHTML | markdownify -}}</div>
+            </a>
+            {{ else }}
+            <div class="discover-item">{{- .title | safeHTML | markdownify -}}</div>
+            {{ end }}
+            <p>{{- .paper | safeHTML | markdownify -}}</p>
+            <div class="des-base des-des">{{ .description | safeHTML | markdownify }}</div>
+            {{ if .quote }}
+            <div class="des-base">
+              <blockquote>{{ .quote | safeHTML | markdownify }}</blockquote>
+            </div>
+            {{ end }}
+          </div>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</div>
