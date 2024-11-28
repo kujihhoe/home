@@ -18,6 +18,10 @@ img: 'https://pic.imgdb.cn/item/61b44e4d2ab3f51d91e608f4.jpg'
 
 {{< report >}}
 
+## 讀書會
+
+{{< session >}}
+
 ## 非學術文章
 
 {{<  article >}}

@@ -9,7 +9,13 @@
         </div>
         <div>
           <time class="des-base des-des a1">{{ .productiontime }}</time><code class="des-step">{{ .category }}</code>
+          {{ if .link }}
+          <a href="{{ .link }}" target="_blank">
+            <div class="discover-item">{{- .title | safeHTML | markdownify -}}</div>
+          </a>
+          {{ else }}
           <div class="discover-item">{{- .title | safeHTML | markdownify -}}</div>
+          {{ end }}
           <div class="des-base des-des">{{ .description | safeHTML | markdownify }}</div>
         </div>
       </div>
