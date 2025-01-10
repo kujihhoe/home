@@ -11,6 +11,7 @@ description: '暑假突肰對古音感興趣，上古音難度太大，那就中
 我的 B 站頻道：<a href="https://space.bilibili.com/176570453/channel/detail?cid=70633" target="\_blank">讀切韻擬音</a>'
 img: 'https://pic.imgdb.cn/item/5f280b9714195aa594f95fea.jpg'
 vertical: false
+draft: true
 ---
 
 ## 立部伎
